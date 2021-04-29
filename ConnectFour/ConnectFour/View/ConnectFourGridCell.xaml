@@ -6,13 +6,21 @@
              xmlns:local="clr-namespace:ConnectFour.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <local:CellFillingToColorConverter x:Key="CellFillingToColorConverter"/>
+    </UserControl.Resources>
     <Grid>
         <Ellipse Width="80"
                  Height="50"
-                 Fill="Blue"
                  Stroke="Black"
                  StrokeThickness="4"
                  Canvas.Left="10"
-                 Canvas.Top="100"></Ellipse>
+                 Canvas.Top="100">
+            <Ellipse.Style>
+                <Style>
+                    <Setter Property="Ellipse.Fill" Value="{Binding CellFilling, Converter={StaticResource CellFillingToColorConverter}}"/>
+                </Style>
+            </Ellipse.Style>
+        </Ellipse>
     </Grid>
 </UserControl>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ConnectFour.ViewModel;
 
 namespace ConnectFour
 {
@@ -22,6 +23,8 @@ namespace ConnectFour
     {
         public MainWindow()
         {
+            MainViewModel mvm = new MainViewModel();
+            DataContext = mvm;
             InitializeComponent();
         }
     }

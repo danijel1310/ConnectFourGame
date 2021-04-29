@@ -26,17 +26,17 @@
                 </Grid.ColumnDefinitions>
 
                 <Border Grid.Column="0" BorderBrush="Yellow">
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="BorderThickness" Value="5px"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
                     <Grid >
-                        <Grid.Style>
-                            <Style TargetType="{x:Type Grid}">
-                                <Setter Property="Border.BorderThickness" Value="0"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Border.BorderThickness" Value="5px"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Grid.Style>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -46,27 +46,28 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <local:ConnectFourGridCell Grid.Row="0" />
-                        <local:ConnectFourGridCell Grid.Row="1" />
-                        <local:ConnectFourGridCell Grid.Row="2" />
-                        <local:ConnectFourGridCell Grid.Row="3" />
-                        <local:ConnectFourGridCell Grid.Row="4" />
-                        <local:ConnectFourGridCell Grid.Row="5" />
+                        <local:ConnectFourGridCell Grid.Row="0" DataContext="{Binding Cells[0][0]}"/>
+                        <local:ConnectFourGridCell Grid.Row="1" DataContext="{Binding Cells[0][1]}"/>
+                        <local:ConnectFourGridCell Grid.Row="2" DataContext="{Binding Cells[0][2]}"/>
+                        <local:ConnectFourGridCell Grid.Row="3" DataContext="{Binding Cells[0][3]}"/>
+                        <local:ConnectFourGridCell Grid.Row="4" DataContext="{Binding Cells[0][4]}"/>
+                        <local:ConnectFourGridCell Grid.Row="5" DataContext="{Binding Cells[0][5]}"/>
                     </Grid>
                 </Border>
 
                 <Border Grid.Column="1" BorderBrush="Yellow">
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="BorderThickness" Value="5px"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+
                     <Grid >
-                        <Grid.Style>
-                            <Style TargetType="{x:Type Grid}">
-                                <Setter Property="Border.BorderThickness" Value="0"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Border.BorderThickness" Value="5px"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Grid.Style>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -76,27 +77,27 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <local:ConnectFourGridCell Grid.Row="0" />
-                        <local:ConnectFourGridCell Grid.Row="1" />
-                        <local:ConnectFourGridCell Grid.Row="2" />
-                        <local:ConnectFourGridCell Grid.Row="3" />
-                        <local:ConnectFourGridCell Grid.Row="4" />
-                        <local:ConnectFourGridCell Grid.Row="5" />
+                        <local:ConnectFourGridCell Grid.Row="0" DataContext="{Binding Cells[1][0]}"/>
+                        <local:ConnectFourGridCell Grid.Row="1" DataContext="{Binding Cells[1][1]}"/>
+                        <local:ConnectFourGridCell Grid.Row="2" DataContext="{Binding Cells[1][2]}"/>
+                        <local:ConnectFourGridCell Grid.Row="3" DataContext="{Binding Cells[1][3]}"/>
+                        <local:ConnectFourGridCell Grid.Row="4" DataContext="{Binding Cells[1][4]}"/>
+                        <local:ConnectFourGridCell Grid.Row="5" DataContext="{Binding Cells[1][5]}"/>
                     </Grid>
                 </Border>
 
                 <Border Grid.Column="2" BorderBrush="Yellow">
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="BorderThickness" Value="5px"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
                     <Grid >
-                        <Grid.Style>
-                            <Style TargetType="{x:Type Grid}">
-                                <Setter Property="Border.BorderThickness" Value="0"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Border.BorderThickness" Value="5px"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Grid.Style>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -106,27 +107,27 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <local:ConnectFourGridCell Grid.Row="0" />
-                        <local:ConnectFourGridCell Grid.Row="1" />
-                        <local:ConnectFourGridCell Grid.Row="2" />
-                        <local:ConnectFourGridCell Grid.Row="3" />
-                        <local:ConnectFourGridCell Grid.Row="4" />
-                        <local:ConnectFourGridCell Grid.Row="5" />
+                        <local:ConnectFourGridCell Grid.Row="0" DataContext="{Binding Cells[2][0]}"/>
+                        <local:ConnectFourGridCell Grid.Row="1" DataContext="{Binding Cells[2][1]}"/>
+                        <local:ConnectFourGridCell Grid.Row="2" DataContext="{Binding Cells[2][2]}"/>
+                        <local:ConnectFourGridCell Grid.Row="3" DataContext="{Binding Cells[2][3]}"/>
+                        <local:ConnectFourGridCell Grid.Row="4" DataContext="{Binding Cells[2][4]}"/>
+                        <local:ConnectFourGridCell Grid.Row="5" DataContext="{Binding Cells[2][5]}"/>
                     </Grid>
                 </Border>
 
                 <Border Grid.Column="3" BorderBrush="Yellow">
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="BorderThickness" Value="5px"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
                     <Grid >
-                        <Grid.Style>
-                            <Style TargetType="{x:Type Grid}">
-                                <Setter Property="Border.BorderThickness" Value="0"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Border.BorderThickness" Value="5px"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Grid.Style>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -136,28 +137,27 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <local:ConnectFourGridCell Grid.Row="0" />
-                        <local:ConnectFourGridCell Grid.Row="1" />
-                        <local:ConnectFourGridCell Grid.Row="2" />
-                        <local:ConnectFourGridCell Grid.Row="3" />
-                        <local:ConnectFourGridCell Grid.Row="4" />
-                        <local:ConnectFourGridCell Grid.Row="5" />
+                        <local:ConnectFourGridCell Grid.Row="0" DataContext="{Binding Cells[3][0]}"/>
+                        <local:ConnectFourGridCell Grid.Row="1" DataContext="{Binding Cells[3][1]}"/>
+                        <local:ConnectFourGridCell Grid.Row="2" DataContext="{Binding Cells[3][2]}"/>
+                        <local:ConnectFourGridCell Grid.Row="3" DataContext="{Binding Cells[3][3]}"/>
+                        <local:ConnectFourGridCell Grid.Row="4" DataContext="{Binding Cells[3][4]}"/>
+                        <local:ConnectFourGridCell Grid.Row="5" DataContext="{Binding Cells[3][5]}"/>
                     </Grid>
                 </Border>
 
                 <Border Grid.Column="4" BorderBrush="Yellow">
-
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="BorderThickness" Value="5px"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
                     <Grid >
-                        <Grid.Style>
-                            <Style TargetType="{x:Type Grid}">
-                                <Setter Property="Border.BorderThickness" Value="0"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Border.BorderThickness" Value="5px"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Grid.Style>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -167,27 +167,26 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <local:ConnectFourGridCell Grid.Row="0" />
-                        <local:ConnectFourGridCell Grid.Row="1" />
-                        <local:ConnectFourGridCell Grid.Row="2" />
-                        <local:ConnectFourGridCell Grid.Row="3" />
-                        <local:ConnectFourGridCell Grid.Row="4" />
-                        <local:ConnectFourGridCell Grid.Row="5" />
+                        <local:ConnectFourGridCell Grid.Row="0" DataContext="{Binding Cells[4][0]}"/>
+                        <local:ConnectFourGridCell Grid.Row="1" DataContext="{Binding Cells[4][1]}"/>
+                        <local:ConnectFourGridCell Grid.Row="2" DataContext="{Binding Cells[4][2]}"/>
+                        <local:ConnectFourGridCell Grid.Row="3" DataContext="{Binding Cells[4][3]}"/>
+                        <local:ConnectFourGridCell Grid.Row="4" DataContext="{Binding Cells[4][4]}"/>
+                        <local:ConnectFourGridCell Grid.Row="5" DataContext="{Binding Cells[4][5]}"/>
                     </Grid>
                 </Border>
                 <Border Grid.Column="5" BorderBrush="Yellow">
-
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="BorderThickness" Value="5px"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
                     <Grid >
-                        <Grid.Style>
-                            <Style TargetType="{x:Type Grid}">
-                                <Setter Property="Border.BorderThickness" Value="0"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Border.BorderThickness" Value="5px"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Grid.Style>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -197,27 +196,27 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <local:ConnectFourGridCell Grid.Row="0" />
-                        <local:ConnectFourGridCell Grid.Row="1" />
-                        <local:ConnectFourGridCell Grid.Row="2" />
-                        <local:ConnectFourGridCell Grid.Row="3" />
-                        <local:ConnectFourGridCell Grid.Row="4" />
-                        <local:ConnectFourGridCell Grid.Row="5" />
+                        <local:ConnectFourGridCell Grid.Row="0" DataContext="{Binding Cells[5][0]}"/>
+                        <local:ConnectFourGridCell Grid.Row="1" DataContext="{Binding Cells[5][1]}"/>
+                        <local:ConnectFourGridCell Grid.Row="2" DataContext="{Binding Cells[5][2]}"/>
+                        <local:ConnectFourGridCell Grid.Row="3" DataContext="{Binding Cells[5][3]}"/>
+                        <local:ConnectFourGridCell Grid.Row="4" DataContext="{Binding Cells[5][4]}"/>
+                        <local:ConnectFourGridCell Grid.Row="5" DataContext="{Binding Cells[5][5]}"/>
                     </Grid>
                 </Border>
 
-                <Border Grid.Column="6" BorderBrush="Green">
+                <Border Grid.Column="6" BorderBrush="Yellow">
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="BorderThickness" Value="5px"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
                     <Grid >
-                        <Grid.Style>
-                            <Style TargetType="{x:Type Grid}">
-                                <Setter Property="Border.BorderThickness" Value="0"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Border.BorderThickness" Value="5px"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Grid.Style>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -227,12 +226,12 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <local:ConnectFourGridCell Grid.Row="0" />
-                        <local:ConnectFourGridCell Grid.Row="1" />
-                        <local:ConnectFourGridCell Grid.Row="2" />
-                        <local:ConnectFourGridCell Grid.Row="3" />
-                        <local:ConnectFourGridCell Grid.Row="4" />
-                        <local:ConnectFourGridCell Grid.Row="5" />
+                        <local:ConnectFourGridCell Grid.Row="0" DataContext="{Binding Cells[6][0]}"/>
+                        <local:ConnectFourGridCell Grid.Row="1" DataContext="{Binding Cells[6][1]}"/>
+                        <local:ConnectFourGridCell Grid.Row="2" DataContext="{Binding Cells[6][2]}"/>
+                        <local:ConnectFourGridCell Grid.Row="3" DataContext="{Binding Cells[6][3]}"/>
+                        <local:ConnectFourGridCell Grid.Row="4" DataContext="{Binding Cells[6][4]}"/>
+                        <local:ConnectFourGridCell Grid.Row="5" DataContext="{Binding Cells[6][5]}"/>
                     </Grid>
                 </Border>
             </Grid>
