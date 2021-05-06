@@ -277,6 +277,18 @@
                     </Button>
                 </StackPanel>
             </Grid>
+            <local:WinnerOverlay Grid.Row="0">
+                <local:WinnerOverlay.Style>
+                    <Style>
+                        <Setter Property="local:WinnerOverlay.Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsGameFinished}" Value="True">
+                                <Setter Property="local:WinnerOverlay.Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </local:WinnerOverlay.Style>
+            </local:WinnerOverlay>
         </Grid>
     </Grid>
 </Window>

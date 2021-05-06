@@ -43,7 +43,17 @@ namespace ConnectFour.Model
 
             throw new InvalidOperationException();
         }
-        
+
+        public CellID SetPieceToEmpty(int row, int col)
+        {
+            var cellid = CellID.Create(row, col);
+            SetPiece(cellid, EConnectFourCellContent.Empty);
+            return cellid;
+            
+
+            throw new InvalidOperationException();
+        }
+
         public void SetPiece(CellID target, EConnectFourCellContent content)
         {
             EConnectFourCellContent oldContent = _cells[target].Content;
@@ -72,7 +82,7 @@ namespace ConnectFour.Model
             {
                 for (int row = 0; row < NumRows; row++)
                 {
-                    SetPiece(row, col, EConnectFourCellContent.Empty);
+                    SetPieceToEmpty(row, col);
                 }
             }
         }

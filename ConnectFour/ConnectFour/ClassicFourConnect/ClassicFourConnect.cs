@@ -113,7 +113,7 @@ namespace ConnectFour.Model
             {
                 for (int col = 0; col < _board.NumCols; col++)
                 {
-                    if (_board.GetCell(CellID.Create(row, col)).Content == playerToContent(ActivePlayer) && (col + 3 <= _board.NumCols))
+                    if (_board.GetCell(CellID.Create(row, col)).Content == playerToContent(ActivePlayer) && (col + 3 < _board.NumCols))
                     {
 
                         win = true;
@@ -227,6 +227,7 @@ namespace ConnectFour.Model
 
         private bool verticalWin()
         {
+            return false;
             var win = false;
             for (int col = 0; col < _board.NumCols; col++)
             {

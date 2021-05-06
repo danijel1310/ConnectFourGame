@@ -47,7 +47,7 @@ namespace ConnectFour.ViewModel
 
         public void SetContent(EConnectFourCellContent content)
         {
-            _cellFilling= content;
+            CellFilling = content;
         }
 
         private int _row;

@@ -97,7 +97,7 @@ namespace ConnectFour.ViewModel
                 Cells.Add(new List<CellStatusViewModel>());
                 for (int j = 0; j < rows; j++)
                 {
-                    var cell = new CellStatusViewModel(i, j, EConnectFourCellContent.Empty);
+                    var cell = new CellStatusViewModel(j, i, EConnectFourCellContent.Empty);
                     cell.CellSelected += Cell_CellSelected;
                     Cells[i].Add(cell);
                 }
