@@ -90,7 +90,7 @@ namespace ConnectFour.Model
 
         private bool isGameFinished(CellID target)
         {
-            return (horizontalWin() || verticalWin() || diagonalWin(target));
+            return (horizontalWin() || verticalWin() || diagonalWin());
         }
 
         private void nextTurn()
@@ -143,9 +143,86 @@ namespace ConnectFour.Model
             return win;
         }
 
-        private bool diagonalWin(CellID currentField)
+        private bool diagonalWin()
         {
-            return true;
+            var win = false;
+
+            //bottom left to top right
+            for (int col = 0; col < _board.NumCols - 3; col++)
+            {
+                for (int row = _board.NumRows - 1; row >= 3; row--)
+                {
+                    var startContent = _board.GetCell(CellID.Create(row, col)).Content;
+                    if (startContent == EConnectFourCellContent.Empty)
+                    {
+                        break;
+                    }else if (startContent == playerToContent(ActivePlayer))
+                    {
+                        win = true;
+                        for (int tempRow = row - 1; tempRow > row - 4 && win; tempRow--)
+                        {
+                            for (int tempCol = col + 1; tempCol < col + 4 && win; tempCol++)
+                            {
+                                if (_board.GetCell(CellID.Create(tempRow, tempCol)).Content ==
+                                    playerToContent(ActivePlayer))
+                                {
+                                    win = true;
+                                }
+                                else
+                                {
+                                    win = false;
+                                }
+                            }
+                        }
+
+                        if (win)
+                        {
+                            return win;
+                        }
+                    }
+                    win = false;
+                }
+            }
+
+            //top left to bottom right
+            for (int col = 0; col < _board.NumCols - 3; col++)
+            {
+                for (int row = _board.NumRows - 4; row >= 0; row--)
+                {
+                    var startContent = _board.GetCell(CellID.Create(row, col)).Content;
+                    if (startContent == EConnectFourCellContent.Empty)
+                    {
+                        break;
+                    }
+                    else if (startContent == playerToContent(ActivePlayer))
+                    {
+                        win = true;
+                        for (int tempRow = row + 1; tempRow < row + 4 && win; tempRow++)
+                        {
+                            for (int tempCol = col + 1; tempCol < col + 4 && win; tempCol++)
+                            {
+                                if (_board.GetCell(CellID.Create(tempRow, tempCol)).Content ==
+                                    playerToContent(ActivePlayer))
+                                {
+                                    win = true;
+                                }
+                                else
+                                {
+                                    win = false;
+                                }
+                            }
+                        }
+
+                        if (win)
+                        {
+                            return win;
+                        }
+                    }
+                    win = false;
+                }
+            }
+
+            return win;
         }
 
         private bool verticalWin()
