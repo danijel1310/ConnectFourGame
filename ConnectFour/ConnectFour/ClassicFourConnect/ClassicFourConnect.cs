@@ -58,18 +58,39 @@ namespace ConnectFour.Model
             }
         }
 
+        private EConnectFourCellContent playerToContent(EActivePlayer player)
+        {
+            if (player == EActivePlayer.Black)
+            {
+                return EConnectFourCellContent.Black;
+            }
+            else
+            {
+                return EConnectFourCellContent.White;
+            }
+        }
+
         public void SetPiece(CellID target)
         {
             if (!IsValidMove(target))
             {
-                throw new InvalidOperationException("Not possible");
+                return;
             }
 
             var targetCell = _board.GetCell(target);
+            var cellid = _board.SetPiece(target.Row, target.Col, playerToContent(ActivePlayer));
 
-            //danijels logic
+            if (isGameFinished(cellid))
+            {
+                GameFinished(this, new GameEndedEventArgs(ActivePlayer));
+            }
 
             nextTurn();
+        }
+
+        private bool isGameFinished(CellID target)
+        {
+            return (horizontalWin() || verticalWin(target) || diagonalWin(target));
         }
 
         private void nextTurn()
@@ -82,6 +103,55 @@ namespace ConnectFour.Model
             {
                 _activePlayer = EActivePlayer.White;
             }
+        }
+
+        private bool horizontalWin()
+        {
+
+            var win = false;
+            for (int row = _board.NumRows - 1; row >= 0; row--)
+            {
+                for (int col = 0; col < _board.NumCols; col++)
+                {
+                    if (_board.GetCell(CellID.Create(row, col)).Content == playerToContent(ActivePlayer))
+                    {
+                        if (col + 3 <= _board.NumCols)
+                        {
+                            win = true;
+                            for (int tempCol = col + 1; tempCol < _board.NumCols && tempCol < col + 4; tempCol++)
+                            {
+                                if (_board.GetCell(CellID.Create(row, tempCol)).Content ==
+                                    playerToContent(ActivePlayer))
+                                {
+                                    win = true;
+                                }
+                                else
+                                {
+                                    win = false;
+                                    break;
+                                }
+                            }
+
+                            if (win)
+                                return win;
+                        }
+
+                        win = false;
+                    }
+                }
+            }
+
+            return win;
+        }
+
+        private bool diagonalWin(CellID currentField)
+        {
+            return true;
+        }
+
+        private bool verticalWin(CellID currentField)
+        {
+            return true;
         }
     }
 }

@@ -32,12 +32,16 @@ namespace ConnectFour.Model
         }
 
 
-        public void SetPiece(int row, int col, EConnectFourCellContent content)
+        public CellID SetPiece(int row, int col, EConnectFourCellContent content)
         {
             if (IsValidMove(keyFor(row, col)))
             {
-                SetPiece(getLowestEmptyRowOfCol(col), content);
+                var cellid = getLowestEmptyRowOfCol(col);
+                SetPiece(cellid, content);
+                return cellid;
             }
+
+            throw new InvalidOperationException();
         }
         
         public void SetPiece(CellID target, EConnectFourCellContent content)

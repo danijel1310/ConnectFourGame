@@ -19,6 +19,6 @@ namespace ConnectFour.Model
 
         void SetPiece(CellID target, EConnectFourCellContent content);
 
-        void SetPiece(int row, int col, EConnectFourCellContent content);
+        CellID SetPiece(int row, int col, EConnectFourCellContent content);
     }
 }
