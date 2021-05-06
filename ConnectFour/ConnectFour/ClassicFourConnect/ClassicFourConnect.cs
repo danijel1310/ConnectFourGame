@@ -90,7 +90,7 @@ namespace ConnectFour.Model
 
         private bool isGameFinished(CellID target)
         {
-            return (horizontalWin() || verticalWin(target) || diagonalWin(target));
+            return (horizontalWin() || verticalWin() || diagonalWin(target));
         }
 
         private void nextTurn()
@@ -113,31 +113,30 @@ namespace ConnectFour.Model
             {
                 for (int col = 0; col < _board.NumCols; col++)
                 {
-                    if (_board.GetCell(CellID.Create(row, col)).Content == playerToContent(ActivePlayer))
+                    if (_board.GetCell(CellID.Create(row, col)).Content == playerToContent(ActivePlayer) && (col + 3 <= _board.NumCols))
                     {
-                        if (col + 3 <= _board.NumCols)
-                        {
-                            win = true;
-                            for (int tempCol = col + 1; tempCol < _board.NumCols && tempCol < col + 4; tempCol++)
-                            {
-                                if (_board.GetCell(CellID.Create(row, tempCol)).Content ==
-                                    playerToContent(ActivePlayer))
-                                {
-                                    win = true;
-                                }
-                                else
-                                {
-                                    win = false;
-                                    break;
-                                }
-                            }
 
-                            if (win)
-                                return win;
+                        win = true;
+                        for (int tempCol = col + 1; tempCol < _board.NumCols && tempCol < col + 4; tempCol++)
+                        {
+                            if (_board.GetCell(CellID.Create(row, tempCol)).Content ==
+                                playerToContent(ActivePlayer))
+                            {
+                                win = true;
+                            }
+                            else
+                            {
+                                win = false;
+                                break;
+                            }
                         }
 
-                        win = false;
+                        if (win)
+                        {
+                            return win;
+                        }
                     }
+                    win = false;
                 }
             }
 
@@ -149,9 +148,40 @@ namespace ConnectFour.Model
             return true;
         }
 
-        private bool verticalWin(CellID currentField)
+        private bool verticalWin()
         {
-            return true;
+            var win = false;
+            for (int col = 0; col < _board.NumCols; col++)
+            {
+                for (int row = _board.NumRows - 1; row >= 0; row--)
+                {
+                    if (_board.GetCell(CellID.Create(row, col)).Content == playerToContent(ActivePlayer) && row - 3 >= 0)
+                    {
+                        win = true;
+                        for (int tempRow = row - 1; tempRow <= 0 && tempRow > row - 4; tempRow--)
+                        {
+                            if (_board.GetCell(CellID.Create(tempRow, col)).Content == playerToContent(ActivePlayer))
+                            {
+                                win = true;
+                            }
+                            else
+                            {
+                                win = false;
+                                break;
+                            }
+                        }
+
+                        if (win)
+                        {
+                            return win;
+                        }
+                    }
+
+                    win = false;
+                }
+            }
+
+            return win;
         }
     }
 }
