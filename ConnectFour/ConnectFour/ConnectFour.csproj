@@ -67,9 +67,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ClassicFourConnect\ClassicFourConnectGrid.cs" />
+    <Compile Include="Events\CellStatusChangedEventArgs.cs" />
+    <Compile Include="Events\GameEndedEventArgs.cs" />
+    <Compile Include="Model\CellID.cs" />
+    <Compile Include="ClassicFourConnect\ClassicFourConnect.cs" />
     <Compile Include="Model\EConnectFourCellContent.cs" />
+    <Compile Include="Model\FourConnectCellModel.cs" />
+    <Compile Include="Model\IFourConnectGrid.cs" />
+    <Compile Include="Model\IGameLogic.cs" />
     <Compile Include="ViewModel\CellStatusViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\CellFillingToColorConverter.cs" />
     <Compile Include="View\ConnectFourGridCell.xaml.cs">
       <DependentUpon>ConnectFourGridCell.xaml</DependentUpon>
