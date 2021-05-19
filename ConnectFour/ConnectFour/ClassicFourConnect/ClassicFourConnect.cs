@@ -44,7 +44,8 @@ namespace ConnectFour.Model
         public void StartGame()
         {
             _board.InitializeBoard();
-            _activePlayer = EActivePlayer.White;
+            //Unmark this if the player at the start is always white
+            //_activePlayer = EActivePlayer.White;
         }
 
         public void SurrenderGame()

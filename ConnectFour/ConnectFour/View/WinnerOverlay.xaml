@@ -30,11 +30,11 @@
                     <Style>
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding Winner}" Value="{x:Static model:EActivePlayer.White}">
-                                <Setter Property="Label.Content" Value="White Player won!"/>
+                                <Setter Property="Label.Content" Value="Yellow Player won!"/>
                                 <Setter Property="Label.Foreground" Value="Yellow"/>
                             </DataTrigger>
                             <DataTrigger Binding="{Binding Winner}" Value="{x:Static model:EActivePlayer.Black}">
-                                <Setter Property="Label.Content" Value="Black Player won!"/>
+                                <Setter Property="Label.Content" Value="Red Player won!"/>
                                 <Setter Property="Label.Foreground" Value="Red"/>
                             </DataTrigger>
                         </Style.Triggers>

@@ -10,9 +10,12 @@
         <local:CellFillingToColorConverter x:Key="CellFillingToColorConverter"/>
     </Window.Resources>
     <Grid>
+
+    
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="350px"/>
+            <ColumnDefinition Width="250px"/>
         </Grid.ColumnDefinitions>
 
         <Border Grid.Column="0" BorderBrush="Black" BorderThickness="5px" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -284,17 +287,19 @@
             </Grid>
             
         </Grid>
-        <local:WinnerOverlay Grid.Column="0">
-            <local:WinnerOverlay.Style>
-                <Style>
-                    <Setter Property="local:WinnerOverlay.Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsGameFinished}" Value="True">
-                            <Setter Property="local:WinnerOverlay.Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </local:WinnerOverlay.Style>
-        </local:WinnerOverlay>
+
+    </Grid>
+    <local:WinnerOverlay Grid.Column="0">
+        <local:WinnerOverlay.Style>
+            <Style>
+                <Setter Property="local:WinnerOverlay.Visibility" Value="Collapsed"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsGameFinished}" Value="True">
+                        <Setter Property="local:WinnerOverlay.Visibility" Value="Visible"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </local:WinnerOverlay.Style>
+    </local:WinnerOverlay>
     </Grid>
 </Window>

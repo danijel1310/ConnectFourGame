@@ -62,7 +62,7 @@ namespace ConnectFour.ViewModel
             }
         }
 
-        private EConnectFourCellContent _activePlayerCellColor;
+        private EConnectFourCellContent _activePlayerCellColor = EConnectFourCellContent.White;
 
         public EConnectFourCellContent ActivePlayerCellColor
         {
@@ -108,7 +108,11 @@ namespace ConnectFour.ViewModel
         {
             Winner = e.Winner;
             IsGameFinished = true;
-            Task.Delay(3000).ContinueWith((x) => { IsGameFinished = true; });
+            Task.Delay(3000).ContinueWith((x) =>
+            {
+                IsGameFinished = false;
+                _gameLogic.StartGame();
+            });
         }
 
         private void _board_CellStatusChanged(object sender, CellStatusChangedEventArgs e)
@@ -159,8 +163,12 @@ namespace ConnectFour.ViewModel
                     (x) =>
                     {
                         _gameLogic.StartGame();
+                        /*
+                         Unmark this if starting player is always white, also in ClassicFourConnect
                         ActivePlayer = EActivePlayer.White;
                         ActivePlayerCellColor = EConnectFourCellContent.White;
+                        */
+                        IsGameFinished = false;
                     },
                     (x) => { return true; }));
             }
