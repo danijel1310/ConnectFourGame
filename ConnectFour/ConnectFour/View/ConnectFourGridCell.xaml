@@ -10,7 +10,7 @@
         <local:CellFillingToColorConverter x:Key="CellFillingToColorConverter"/>
     </UserControl.Resources>
     <Grid>
-        <Ellipse Width="80"
+        <Ellipse Width="50"
                  Height="50"
                  Stroke="Black"
                  StrokeThickness="4"

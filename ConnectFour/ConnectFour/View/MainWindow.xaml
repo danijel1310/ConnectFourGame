@@ -16,7 +16,12 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.Column="0" BorderBrush="Black" BorderThickness="5px" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Grid Height="600" Width="600">
+            <Grid Height="400" Width="400">
+                <Grid.Style>
+                    <Style>
+                        <Setter Property="Grid.Background" Value="Blue"/>
+                    </Style>
+                </Grid.Style>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -277,18 +282,19 @@
                     </Button>
                 </StackPanel>
             </Grid>
-            <local:WinnerOverlay Grid.Row="0">
-                <local:WinnerOverlay.Style>
-                    <Style>
-                        <Setter Property="local:WinnerOverlay.Visibility" Value="Collapsed"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsGameFinished}" Value="True">
-                                <Setter Property="local:WinnerOverlay.Visibility" Value="Visible"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </local:WinnerOverlay.Style>
-            </local:WinnerOverlay>
+            
         </Grid>
+        <local:WinnerOverlay Grid.Column="0">
+            <local:WinnerOverlay.Style>
+                <Style>
+                    <Setter Property="local:WinnerOverlay.Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsGameFinished}" Value="True">
+                            <Setter Property="local:WinnerOverlay.Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </local:WinnerOverlay.Style>
+        </local:WinnerOverlay>
     </Grid>
 </Window>
